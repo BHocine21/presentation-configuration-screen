@@ -1,0 +1,11 @@
+// Variables and basic style.
+@import "scss/base/_variables.scss";
+@import "scss/base/base";
+
+// Specific style for components.
+@import "scss/components/sidebar";
+@import "scss/components/container";
+@import "scss/components/actions-bar";
+@import "scss/components/slides-presentation";
+@import "scss/components/slides-list";
+@import "scss/components/navigation-tab";

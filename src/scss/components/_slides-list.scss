@@ -1,0 +1,40 @@
+.slides-list {
+	width: 230px;
+	height: calc(100vh - 52px);
+	overflow-y: scroll;
+	border-left: 1px solid $border-color;
+
+	ul {
+		padding-left: 0rem;
+	}
+}
+
+.slides-item {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	&:hover {
+		border: 1px solid $primary-color;
+	}
+	&.active {
+		background-color: $hover-background-blue;
+		img {
+			border: 0.1rem solid $primary-color;
+		}
+		label {
+			color: $primary-color;
+		}
+	}
+
+	button {
+		display: flex;
+		background: none;
+		border: 0;
+		cursor: pointer;
+		label {
+			width: 10%;
+		}
+		img {
+			width: 80%;
+		}
+	}
+}

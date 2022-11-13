@@ -1,0 +1,36 @@
+.slides-presentation {
+	display: flex;
+	height: calc(100% - 52px);
+}
+
+.current-slide {
+	width: calc(100% - 230px);
+}
+
+.speaker-note {
+	width: 100%;
+	resize: none;
+	padding: 0;
+	height: 8rem;
+	font-size: medium;
+	border: 0;
+	font-family: $font-nunito;
+	border-top: 1px solid $border-color;
+	outline-style: none;
+}
+
+.slide-with-buttons {
+	height: calc(100% - 8rem);
+}
+
+.slide-content {
+	text-align: center;
+	background: white;
+	margin: 0.5rem;
+	border-radius: 4px;
+	box-shadow: 0 0 3px rgb(183, 183, 183);
+
+	img {
+		width: 60%;
+	}
+}

@@ -1,0 +1,47 @@
+.sidebar {
+	background: $primary-background-color;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 300px;
+	height: 100%;
+	border-left: 1px solid $border-color;
+
+	ul, li {
+		padding-left: 0;
+		margin: 0;
+	}
+
+  li {
+    padding: 13px 30px;
+    border-top: 1px solid $border-color;
+    font-size: 16px;
+
+		&:hover {
+			color: $primary-color;
+			background: $hover-background-blue;
+		}
+  }
+}
+
+.menu {
+	display: flex;
+}
+
+.menu-item {
+	width: 50%;
+
+	button {
+		font-weight: bold;
+		background: none;
+		border: 0;
+		cursor: pointer;
+	}
+
+	&.active {
+			border-bottom: 5px solid $primary-color;
+			button {
+				color: $primary-color;
+			}
+	}
+}
