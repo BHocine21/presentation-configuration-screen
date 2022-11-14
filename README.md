@@ -17,6 +17,7 @@ Install the project with npm :
 ```
 
 ## Libraries used
+
 | Library      | Version | Description                           |
 |:-------------|:--------|:--------------------------------------|
 | `react`      | ^18.2.0 | React core code                       |
@@ -32,16 +33,16 @@ React components are split as shown in the following screenshot:
 
 Here is some information about these components :
 | Component              | Description                                              | State | Props  |
-|:-----------------------|:---------------------------------------------------------||:--------|:--------------------------------------|
-| `App.jsx`              | Contains all main page content.                          |n/a|n/a|
-| `MainContainer.jsx`    | Contains current slide, slides list and actions bar.     |n/a|n/a|
-| `SlidesPresenation.jsx`| Contains current slide and action bar.                   |{ slidesList: array, currentSlide: object } |n/a|
-| `CurrentSlide.jsx`     | Contains current slide, pagination bloc and speaker note.|{ note: string }|{ slide: object, slidesNumber: number, changeSlide: func, setSlides: func }|
-| `ActionBar.jsx`        | Contains 'Discard' and 'Save' buttons.                   |n/a|n/a|
-| `SlidesList.jsx`       | Contains scrollable slides list.                         |n/a|{ slides: array, currentSlideId: number, changeSlide: func }|
-| `Sidebar.jsx`          | Contains tabs menu, questions and presentations blocs.   |{ currentTab: string }|n/a|
-| `Questions.jsx`        | Contains questions list.                                 |n/a|n/a|
-| `Presenations.jsx`     | Contains presentations list.                             |n/a|n/a|
+|:-----------------------|:---------------------------------------------------------|:--------|:--------------------------------------|
+| [App.jsx](./src/App.jsx)              | Contains all main page content.                          |n/a|n/a|
+| [MainContainer.jsx](./src/components/MainContainer/MainContainer.jsx)    | Contains current slide, slides list and actions bar.     |n/a|n/a|
+| [SlidesPresenation.jsx](./src/components/SlidesPresentation/SlidesPresentation.jsx)| Contains current slide and action bar.                   |{ slidesList: array, currentSlide: object } |n/a|
+| [CurrentSlide.jsx](./src/components/SlidesPresentation/CurrentSlide/CurrentSlide.jsx)     | Contains current slide, pagination bloc and speaker note.|{ note: string }|{ slide: object, slidesNumber: number, changeSlide: func, setSlides: func }|
+| [ActionBar.jsx](./src/components/ActionsBar/ActionsBar.jsx)        | Contains 'Discard' and 'Save' buttons.                   |n/a|n/a|
+| [SlidesList.jsx](./src/components/SlidesPresentation/SlidesList/SlidesList.jsx)       | Contains scrollable slides list.                         |n/a|{ slides: array, currentSlideId: number, changeSlide: func }|
+| [Sidebar.jsx](./src/components/Sidebar/SideBar.jsx)          | Contains tabs menu, questions and presentations blocs.   |{ currentTab: string }|n/a|
+| [Questions.jsx](./src/components/Sidebar/Questions/Questions.jsx)        | Contains questions list.                                 |n/a|n/a|
+| [Presenations.jsx](./src/components/Sidebar/Presentations/Presentations.jsx)     | Contains presentations list.                             |n/a|n/a|
 
 
 ## Features/Screenshots
@@ -50,7 +51,8 @@ Here is the rendering of the main page :
 
 Through this main page, here are some functionnalities :
 - Sidebar : where a menu is displayed to list questions and presentations.
-![Sidebar](./screenshots/Sidebar.gif)
+
+  ![Sidebar](./screenshots/Sidebar.gif)
 
 
 - Slides list : all presentation slides are displayed here. The user can click any slide to display it.
