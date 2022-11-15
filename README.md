@@ -18,18 +18,18 @@ Install the project with npm :
 
 ## 📚 Libraries used
 
-| Library      | Version | Description                           |
-|:-------------|:--------|:--------------------------------------|
-| `react`      | ^18.2.0 | React core code                       |
-| `react-dom`  | ^18.2.0 | Package provides DOM-specific methods |
+| Library      | Version | Description                            |
+|:-------------|:--------|:---------------------------------------|
+| `react`      | ^18.2.0 | React core code.                       |
+| `react-dom`  | ^18.2.0 | Package provides DOM-specific methods. |
 | `@babel/core`| ^7.20.2 | Transpile ECMAScript 2015+ code into compatible version of JavaScript in current and older browsers or environments. |
-| `parcel`       | ^1.12.5 | JavaScript compiler, CSS transformer, and source maps implementation.        |
-| `sass`       | ^1.56.1 | Pre-processor extension to CSS        |
+| `parcel`       | ^1.12.5 | JavaScript compiler, CSS transformer and source maps implementation.        |
+| `sass`       | ^1.56.1 | Pre-processor extension to CSS.        |
 
 
 
 ## 🏠 Components list
-React components are split as shown in the following screenshot:
+React components are split as shown in the following screenshot :
 ![React components](./screenshots/react-components.jpg)
 
 Here is some information about these components :
@@ -56,7 +56,7 @@ Through this main page, here are some functionalities :
   ![Sidebar](./screenshots/Sidebar.gif)
 
 
-- Slides list : all presentation slides are displayed here. The user can click any slide to display it.
+- Slides list : all presentation slides are displayed here. The user can click on any slide to display it.
 ![Slides list](./screenshots/slides-list.gif)
 
 - Current slide : the current slide, number and speaker notes are displayed here. The user can fill notes or click on arrow buttons to go the next or previous slide.
@@ -87,7 +87,7 @@ Code side :
 
 ## 👨‍🚀 Author
 
-[@BHocine21](https://www.github.com/octokatherine)
+[@BHocine21](https://github.com/BHocine21)
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hocine-bouhlala-407025132/)
 
