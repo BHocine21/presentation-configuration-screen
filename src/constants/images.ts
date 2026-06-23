@@ -1,21 +1,45 @@
-export const image1 = require('../assets/1.png')
-export const image2 = require('../assets/2.png')
-export const image3 = require('../assets/3.png')
-export const image4 = require('../assets/4.png')
-export const image5 = require('../assets/5.png')
-export const image6 = require('../assets/6.png')
-export const image7 = require('../assets/7.png')
-export const image8 = require('../assets/8.png')
-export const image9 = require('../assets/9.png')
-export const image10 = require('../assets/10.png')
-export const image11 = require('../assets/11.png')
-export const image12 = require('../assets/12.png')
-export const image13 = require('../assets/13.png')
-export const image14 = require('../assets/14.png')
-export const image15 = require('../assets/15.png')
-export const image16 = require('../assets/16.png')
-export const image17 = require('../assets/17.png')
-export const image18 = require('../assets/18.png')
-export const image19 = require('../assets/19.png')
-export const image20 = require('../assets/20.png')
-export const image21 = require('../assets/21.png')
+import image1 from '../assets/1.png'
+import image2 from '../assets/2.png'
+import image3 from '../assets/3.png'
+import image4 from '../assets/4.png'
+import image5 from '../assets/5.png'
+import image6 from '../assets/6.png'
+import image7 from '../assets/7.png'
+import image8 from '../assets/8.png'
+import image9 from '../assets/9.png'
+import image10 from '../assets/10.png'
+import image11 from '../assets/11.png'
+import image12 from '../assets/12.png'
+import image13 from '../assets/13.png'
+import image14 from '../assets/14.png'
+import image15 from '../assets/15.png'
+import image16 from '../assets/16.png'
+import image17 from '../assets/17.png'
+import image18 from '../assets/18.png'
+import image19 from '../assets/19.png'
+import image20 from '../assets/20.png'
+import image21 from '../assets/21.png'
+
+export {
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
+  image11,
+  image12,
+  image13,
+  image14,
+  image15,
+  image16,
+  image17,
+  image18,
+  image19,
+  image20,
+  image21
+}

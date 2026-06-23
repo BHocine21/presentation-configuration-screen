@@ -1,7 +1,14 @@
 import React from 'react'
-import { func, number, array } from 'prop-types'
 
-const SlidesList = ({ slides, currentSlideId, changeSlide }) => (
+import type { Slide } from '../../../types/slide'
+
+type SlidesListProps = {
+  slides: Slide[]
+  currentSlideId: number
+  changeSlide: (slideId: number) => void
+}
+
+const SlidesList = ({ slides, currentSlideId, changeSlide }: SlidesListProps) => (
   <div className='slides-list'>
     <ul>
       {slides.map((slide, index) => (
@@ -15,11 +22,5 @@ const SlidesList = ({ slides, currentSlideId, changeSlide }) => (
     </ul>
   </div>
 )
-
-SlidesList.propTypes = {
-  slides: array.isRequired,
-  currentSlideId: number.isRequired,
-  changeSlide: func.isRequired
-}
 
 export default SlidesList

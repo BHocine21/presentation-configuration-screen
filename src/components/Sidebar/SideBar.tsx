@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from 'react'
 
-import { tabs } from '../../constants/constants.js'
+import { tabs } from '../../constants/constants'
 
 const Sidebar = () => {
   // Tabs present on sidebar.
   const [currentTab, setCurrentTab] = useState('questions')
   // Current component displayed.
-  const CurrentComponent = useMemo(() => tabs.find(tab => tab.name === currentTab).Component)
+  const CurrentComponent = useMemo(() => tabs.find(tab => tab.name === currentTab)!.Component, [currentTab])
 
   return (
     <div className='sidebar'>

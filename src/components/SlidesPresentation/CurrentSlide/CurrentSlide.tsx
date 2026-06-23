@@ -1,9 +1,15 @@
-import { func, number } from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
-import slideType from '../../../types/slide'
+import type { Slide } from '../../../types/slide'
 
-const CurrentSlide = ({ slide, slidesNumber, changeSlide, setSlides }) => {
+type CurrentSlideProps = {
+  slide: Slide
+  slidesNumber: number
+  changeSlide: (slideId: number) => void
+  setSlides: (newSlide: Slide) => void
+}
+
+const CurrentSlide = ({ slide, slidesNumber, changeSlide, setSlides }: CurrentSlideProps) => {
   // speaker note of current slide.
   const [note, setNote] = useState('')
 
@@ -18,7 +24,7 @@ const CurrentSlide = ({ slide, slidesNumber, changeSlide, setSlides }) => {
   }, [slide])
 
   // Handle change function for text area field.
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNote(event.currentTarget.value)
   }
 
@@ -56,7 +62,6 @@ const CurrentSlide = ({ slide, slidesNumber, changeSlide, setSlides }) => {
       </div>
       <textarea
         className='speaker-note'
-        type='text'
         placeholder='Click here to add speaker note'
         value={note}
         onChange={handleChange}
@@ -64,13 +69,6 @@ const CurrentSlide = ({ slide, slidesNumber, changeSlide, setSlides }) => {
       />
     </div>
   )
-}
-
-CurrentSlide.propTypes = {
-  slide: slideType.isRequired,
-  slidesNumber: number.isRequired,
-  changeSlide: func.isRequired,
-  setSlides: func.isRequired
 }
 
 export default CurrentSlide

@@ -1,10 +1,19 @@
-import * as images from './images'
+import type { ComponentType } from 'react'
 
-import Questions from '../components/Sidebar/Questions/Questions.jsx'
-import Presentations from '../components/Sidebar/Presentations/Presentations.jsx'
+import * as images from './images'
+import type { Slide } from '../types/slide'
+
+import Questions from '../components/Sidebar/Questions/Questions'
+import Presentations from '../components/Sidebar/Presentations/Presentations'
+
+type Tab = {
+  name: string
+  title: string
+  Component: ComponentType
+}
 
 // Tabs displayed on sidebar.
-export const tabs = [
+export const tabs: Tab[] = [
   {
     name: 'questions',
     title: 'Insert questions',
@@ -17,19 +26,20 @@ export const tabs = [
   }
 ]
 
+const imagesByName: Record<string, string> = images
+
 /**
  * Init slides with for each slide : content corresponding to an image, id & speaker note (empty by default).
  *
- * @returns array
+ * @returns Slide[]
  *   Slides.
-
  */
-const getSlides = () => {
-  const slides = []
+const getSlides = (): Slide[] => {
+  const slides: Slide[] = []
   for (let index = 1; index <= 21; index++) {
     slides.push({
       id: index,
-      content: images['image' + index],
+      content: imagesByName['image' + index],
       speakerNote: ''
     })
   }
