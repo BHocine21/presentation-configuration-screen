@@ -1,10 +1,6 @@
 node_modules
 dist
-.cache
-.parcel-cache
-.claude
 coverage
 playwright-report
 test-results
-*.local
-*.tsbuildinfo
+pnpm-lock.yaml

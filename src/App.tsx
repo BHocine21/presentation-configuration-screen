@@ -1,13 +1,19 @@
-import React from 'react'
+import CssBaseline from '@mui/material/CssBaseline'
+import { ThemeProvider } from '@mui/material/styles'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Sidebar from './components/Sidebar/SideBar'
-import MainContainer from './components/MainContainer/MainContainer'
+import { theme } from './theme/theme'
+import PresentationEditorPage from './pages/PresentationEditorPage/PresentationEditorPage'
 
 const App = () => (
-  <div className='wrapper'>
-    <MainContainer />
-    <Sidebar />
-  </div>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Routes>
+        <Route path="/" element={<PresentationEditorPage />} />
+      </Routes>
+    </BrowserRouter>
+  </ThemeProvider>
 )
 
 export default App

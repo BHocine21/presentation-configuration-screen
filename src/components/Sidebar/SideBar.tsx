@@ -1,24 +1,39 @@
-import React, { useMemo, useState } from 'react'
+import Box from '@mui/material/Box'
+import Tab from '@mui/material/Tab'
+import Tabs from '@mui/material/Tabs'
 
-import { tabs } from '../../constants/constants'
+import { useSidebar } from './useSidebar'
 
 const Sidebar = () => {
-  // Tabs present on sidebar.
-  const [currentTab, setCurrentTab] = useState('questions')
-  // Current component displayed.
-  const CurrentComponent = useMemo(() => tabs.find(tab => tab.name === currentTab)!.Component, [currentTab])
+  const { tabs, currentTab, setCurrentTab, CurrentComponent } = useSidebar()
 
   return (
-    <div className='sidebar'>
-        <ul className='menu'>
-        {tabs.map((tab, index) => (
-          <li className={`menu-item ${tab.name === currentTab ? 'active' : ''}`} key={index}>
-            <button type='button' onClick={() => setCurrentTab(tab.name)}>{tab.title}</button>
-          </li>
+    <Box
+      component="aside"
+      sx={{
+        width: { xs: '100%', md: 300 },
+        height: { xs: '35vh', md: '100%' },
+        flexShrink: 0,
+        overflowY: 'auto',
+        bgcolor: 'background.default',
+        borderLeft: { xs: 0, md: 1 },
+        borderTop: { xs: 1, md: 0 },
+        borderColor: 'divider',
+      }}
+    >
+      <Tabs
+        value={currentTab}
+        onChange={(_event, value: string) => {
+          setCurrentTab(value)
+        }}
+        variant="fullWidth"
+      >
+        {tabs.map(tab => (
+          <Tab key={tab.name} label={tab.title} value={tab.name} />
         ))}
-        </ul>
-        <CurrentComponent />
-    </div>
+      </Tabs>
+      <CurrentComponent />
+    </Box>
   )
 }
 

@@ -1,0 +1,31 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "playwright-report",
+    "test-results",
+    "pnpm-lock.yaml",
+    "screenshots"
+  ],
+  "words": [
+    "Nunito",
+    "MUI",
+    "tsx",
+    "Vite",
+    "vite",
+    "jsdom",
+    "BHocine",
+    "Bouhlala",
+    "Hocine",
+    "favicon",
+    "cspell",
+    "esbuild",
+    "playwright",
+    "localStorage",
+    "speakerNote",
+    "speakernote"
+  ]
+}

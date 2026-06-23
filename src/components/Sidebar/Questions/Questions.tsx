@@ -1,26 +1,17 @@
-import React from 'react'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
+
+import { mockQuestions } from '../../../constants/constants'
 
 const Questions = () => (
-  <ul>
-    <li>
-      <span>Question 1</span>
-    </li>
-    <li>
-      <span>Question 2</span>
-    </li>
-    <li>
-      <span>Question 3</span>
-    </li>
-    <li>
-      <span>Question 4</span>
-    </li>
-    <li>
-      <span>Question 5</span>
-    </li>
-    <li>
-      <span>Question 6</span>
-    </li>
-  </ul>
+  <List sx={{ py: 0 }}>
+    {mockQuestions.map(question => (
+      <ListItem key={question.id} sx={{ borderTop: 1, borderColor: 'divider' }}>
+        <ListItemText primary={question.label} />
+      </ListItem>
+    ))}
+  </List>
 )
 
 export default Questions

@@ -41,5 +41,5 @@ export {
   image18,
   image19,
   image20,
-  image21
+  image21,
 }

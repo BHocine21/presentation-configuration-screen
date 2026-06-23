@@ -1,26 +1,17 @@
-import React from 'react'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
+
+import { mockPresentations } from '../../../constants/constants'
 
 const Presentations = () => (
-  <ul>
-    <li>
-      <span>Presentation 1</span>
-    </li>
-    <li>
-      <span>Presentation 2</span>
-    </li>
-    <li>
-      <span>Presentation 3</span>
-    </li>
-    <li>
-      <span>Presentation 4</span>
-    </li>
-    <li>
-      <span>Presentation 5</span>
-    </li>
-    <li>
-      <span>Presentation 6</span>
-    </li>
-  </ul>
+  <List sx={{ py: 0 }}>
+    {mockPresentations.map(presentation => (
+      <ListItem key={presentation.id} sx={{ borderTop: 1, borderColor: 'divider' }}>
+        <ListItemText primary={presentation.label} />
+      </ListItem>
+    ))}
+  </List>
 )
 
 export default Presentations

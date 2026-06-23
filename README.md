@@ -1,93 +1,61 @@
+# Presentation configuration screen
 
-# Presenatation configuration screen
+An interface where the user can view a presentation, navigate its slides, add speaker notes, and browse questions/presentations from a sidebar.
 
-An interface where the user can view his presentation, modify it, add notes & questions.
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for the stack, folder structure, and state management details.
 
-
-## 📝 Installation
-
-Install the project with npm :
+## Installation
 
 ```bash
-  // Install all dependencies.
-  npm install
-
-  // Run the project.
-  npm start
+pnpm install
+pnpm dev
 ```
 
-## 📚 Libraries used
+## Available scripts
 
-| Library      | Version | Description                            |
-|:-------------|:--------|:---------------------------------------|
-| `react`      | ^18.2.0 | React core code.                       |
-| `react-dom`  | ^18.2.0 | Package provides DOM-specific methods. |
-| `@babel/core`| ^7.20.2 | Transpile ECMAScript 2015+ code into compatible version of JavaScript in current and older browsers or environments. |
-| `parcel`       | ^1.12.5 | JavaScript compiler, CSS transformer and source maps implementation.        |
-| `sass`       | ^1.56.1 | Pre-processor extension to CSS.        |
+| Script                                                 | Description                                       |
+| :----------------------------------------------------- | :------------------------------------------------ |
+| `pnpm dev`                                             | Starts the Vite dev server                        |
+| `pnpm build`                                           | Type-checks and builds the production bundle      |
+| `pnpm preview`                                         | Serves the production build locally               |
+| `pnpm typecheck`                                       | Runs the TypeScript compiler with no emit         |
+| `pnpm lint` / `pnpm lint:fix`                          | Lints the codebase with ESLint                    |
+| `pnpm format` / `pnpm format:check`                    | Formats / checks formatting with Prettier         |
+| `pnpm spellcheck`                                      | Spell-checks source files with cspell             |
+| `pnpm test` / `pnpm test:watch` / `pnpm test:coverage` | Runs unit tests with Jest + React Testing Library |
+| `pnpm e2e`                                             | Runs the Playwright end-to-end suite              |
 
+## Features
 
+- **Slide navigation**: browse the 21 slides via the pagination buttons or by clicking a thumbnail in the slides list.
+- **Speaker notes**: edit a note for the current slide; it is buffered locally until the field loses focus.
+- **Save / Discard**: edited notes are persisted to `localStorage` on save, or reverted to the last saved state on discard.
+- **Sidebar**: switch between "Insert questions" and "Update presentation" tabs (mock data).
+- **Responsive**: the layout stacks vertically on mobile/tablet and switches to a side-by-side layout on desktop.
 
-## 🏠 Components list
-React components are split as shown in the following screenshot :
-![React components](./screenshots/react-components.jpg)
+### Desktop
 
-Here is some information about these components :
-| Component              | Description                                              | State | Props  |
-|:-----------------------|:---------------------------------------------------------|:--------|:--------------------------------------|
-| [App.jsx](./src/App.jsx)              | Contains all main page content.                          |n/a|n/a|
-| [MainContainer.jsx](./src/components/MainContainer/MainContainer.jsx)    | Contains current slide, slides list and actions bar.     |n/a|n/a|
-| [SlidesPresenation.jsx](./src/components/SlidesPresentation/SlidesPresentation.jsx)| Contains current slide and action bar.                   |{ slidesList: array, currentSlide: object } |n/a|
-| [CurrentSlide.jsx](./src/components/SlidesPresentation/CurrentSlide/CurrentSlide.jsx)     | Contains current slide, pagination bloc and speaker note.|{ note: string }|{ slide: object, slidesNumber: number, changeSlide: func, setSlides: func }|
-| [ActionBar.jsx](./src/components/ActionsBar/ActionsBar.jsx)        | Contains 'Discard' and 'Save' buttons.                   |n/a|n/a|
-| [SlidesList.jsx](./src/components/SlidesPresentation/SlidesList/SlidesList.jsx)       | Contains a scrollable slides list.                         |n/a|{ slides: array, currentSlideId: number, changeSlide: func }|
-| [Sidebar.jsx](./src/components/Sidebar/SideBar.jsx)          | Contains tabs menu, questions and presentations blocs.   |{ currentTab: string }|n/a|
-| [Questions.jsx](./src/components/Sidebar/Questions/Questions.jsx)        | Contains questions list.                                 |n/a|n/a|
-| [Presenations.jsx](./src/components/Sidebar/Presentations/Presentations.jsx)     | Contains presentations list.                             |n/a|n/a|
+![Desktop overview](./screenshots/desktop-overview.png)
 
+Editing a speaker note enables the Save/Discard actions:
 
-## 🚀 Features/Screenshots
-Here is the rendering of the main page :
-![Main page](./screenshots/main-page.png)
+![Speaker note editing](./screenshots/speaker-note-editing.png)
 
-Through this main page, here are some functionalities :
-- Sidebar : where a menu is displayed to list questions and presentations.
+The sidebar's "Update presentation" tab:
 
-  ![Sidebar](./screenshots/Sidebar.gif)
+![Sidebar presentations tab](./screenshots/sidebar-presentations-tab.png)
 
+### Mobile
 
-- Slides list : all presentation slides are displayed here. The user can click on any slide to display it.
-![Slides list](./screenshots/slides-list.gif)
+![Mobile overview](./screenshots/mobile-overview.png)
 
-- Current slide : the current slide, number and speaker notes are displayed here. The user can fill notes or click on arrow buttons to go the next or previous slide.
-![Current slide](./screenshots/current-slide.gif)
+## Known limitations
 
-- Actions bar : footer bloc which contains 'Save' and 'Discard' buttons.
-![Action bar](./screenshots/actions-bar.gif)
+- Questions and presentations in the sidebar are static mock data — there is no editing capability on these lists.
+- There is no backend: persistence is limited to speaker notes in `localStorage`.
 
-The page fits screen size :
-![Responsive test](./screenshots/responsive-test.gif)
-
-## ⛔ Bugs/limitations
-Functional side :
-- Add paddings on speaker note textarea field to avoid that the text is too close to the block.
-- At the sidebar menu, the onclick event is only when the cursor is on the text but not on the whole block.
-- The icons are not present in questions and presentations lists.
-
-Code side :
-- Add relative path when importing files.
-- Create File which contains all texts displayed in the interface.
-
-## ✨ Next steps
-
-- Allow user to zoom in/out on the slide.
-- Make slidebar and slides list block resizable.
-- Add ability to undo the last action with "arrow" buttons.
-
-
-## 👨‍🚀 Author
+## Author
 
 [@BHocine21](https://github.com/BHocine21)
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hocine-bouhlala-407025132/)
-
