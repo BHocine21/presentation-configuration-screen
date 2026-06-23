@@ -2,6 +2,8 @@
 
 An interface where the user can view a presentation, navigate its slides, add speaker notes, and browse questions/presentations from a sidebar.
 
+🔗 **Live demo:** [presentation-configuration-screen.vercel.app](https://presentation-configuration-screen.vercel.app/)
+
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for the stack, folder structure, and state management details.
 
 ## Installation
@@ -48,6 +50,10 @@ The sidebar's "Update presentation" tab:
 ### Mobile
 
 ![Mobile overview](./screenshots/mobile-overview.png)
+
+## Deployment
+
+The app is a static Vite build (`pnpm build` outputs to `dist/`), deployed on [Vercel](https://vercel.com/): every push triggers a build of the production bundle and serves it as a static site. No backend or environment variables are required.
 
 ## Known limitations
 
